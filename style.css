@@ -1,4 +1,4 @@
-/* Variaveis globais para manter cores, sombras e medidas em um so lugar. */
+/* Variáveis globais para manter cores, sombras e medidas em um só lugar. */
 :root {
   --azul: #163452;
   --azul-escuro: #0f2237;
@@ -13,14 +13,14 @@
   --nav-altura: 72px;
 }
 
-/* Remove margens padrao e facilita o calculo de largura dos elementos. */
+/* Remove margens padrão e facilita o cálculo de largura dos elementos. */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Deixa a rolagem suave quando a pagina volta para o topo. */
+/* Deixa a rolagem suave quando a página volta para o topo. */
 html {
   scroll-behavior: smooth;
 }
@@ -39,7 +39,7 @@ img {
   max-width: 100%;
 }
 
-/* Botoes herdam a fonte do site. */
+/* Botões herdam a fonte do site. */
 button {
   font: inherit;
 }
@@ -126,7 +126,7 @@ button {
   color: var(--dourado-claro);
 }
 
-/* Botao hamburguer aparece apenas em telas menores. */
+/* Botão hamburguer aparece apenas em telas menores. */
 .hamburger {
   background: transparent;
   border: 0;
@@ -137,7 +137,7 @@ button {
   padding: 0.35rem;
 }
 
-/* Barrinhas do icone hamburguer. */
+/* Barrinhas do ícone hamburguer. */
 .hamburger span {
   background: var(--branco);
   border-radius: 999px;
@@ -182,7 +182,7 @@ section {
   padding-top: var(--nav-altura);
 }
 
-/* A secao ativa aparece na tela. */
+/* A seção ativa aparece na tela. */
 section.ativa {
   display: block;
 }
@@ -217,7 +217,7 @@ section.ativa {
   z-index: 1;
 }
 
-/* Logo central da pagina inicial. */
+/* Logo central da página inicial. */
 .hero-logo {
   border: 4px solid rgba(255, 255, 255, 0.85);
   border-radius: 50%;
@@ -228,7 +228,7 @@ section.ativa {
   width: clamp(110px, 22vw, 180px);
 }
 
-/* Titulo principal. */
+/* Título principal. */
 .hero h1 {
   color: var(--branco);
   font-family: "Playfair Display", Georgia, serif;
@@ -238,7 +238,7 @@ section.ativa {
   max-width: 900px;
 }
 
-/* Subtitulo do hero. */
+/* Subtítulo do hero. */
 .subtitulo-hero {
   color: var(--dourado-claro);
   font-size: clamp(0.78rem, 2vw, 1rem);
@@ -257,7 +257,7 @@ section.ativa {
   max-width: 650px;
 }
 
-/* Linha dos botoes principais. */
+/* Linha dos botões principais. */
 .hero-btns {
   display: flex;
   flex-wrap: wrap;
@@ -265,7 +265,7 @@ section.ativa {
   justify-content: center;
 }
 
-/* Botao preenchido dourado. */
+/* Botão preenchido dourado. */
 .btn-dourado,
 .btn-outline {
   border-radius: 6px;
@@ -279,14 +279,14 @@ section.ativa {
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Cor do botao principal. */
+/* Cor do botão principal. */
 .btn-dourado {
   background: var(--dourado);
   border: 1px solid var(--dourado);
   color: var(--azul-escuro);
 }
 
-/* Cor do botao secundario. */
+/* Cor do botão secundário. */
 .btn-outline {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -299,14 +299,14 @@ section.ativa {
   transform: translateY(-2px);
 }
 
-/* Faixa azul com horarios das missas. */
+/* Faixa azul com horários das missas. */
 .missas-strip {
   background: var(--azul);
   border-top: 3px solid var(--dourado);
   padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
 }
 
-/* Titulos das secoes. */
+/* Títulos das seções. */
 .missas-strip h2,
 .secao-titulo {
   color: var(--branco);
@@ -316,12 +316,12 @@ section.ativa {
   text-align: center;
 }
 
-/* Titulo da secao clara usa azul. */
+/* Título da seção clara usa azul. */
 .secao-titulo {
   color: var(--azul);
 }
 
-/* Pequena linha dourada abaixo de titulos. */
+/* Pequena linha dourada abaixo de títulos. */
 .linha-dourada {
   background: var(--dourado);
   height: 3px;
@@ -329,7 +329,7 @@ section.ativa {
   width: 56px;
 }
 
-/* Grade responsiva dos horarios. */
+/* Grade responsiva dos horários. */
 .missas-grid {
   display: grid;
   gap: 1rem;
@@ -365,7 +365,7 @@ section.ativa {
   font-size: clamp(1.35rem, 3vw, 1.7rem);
 }
 
-/* Area de destaques da pagina inicial. */
+/* Área de destaques da página inicial. */
 .destaques {
   margin: 0 auto;
   max-width: 1120px;
@@ -400,7 +400,7 @@ section.ativa {
   transform: translateY(-4px);
 }
 
-/* Icone textual de cada card. */
+/* Ícone textual de cada card. */
 .card-icone {
   align-items: center;
   background: var(--cinza-claro);
@@ -414,7 +414,7 @@ section.ativa {
   width: 48px;
 }
 
-/* Titulo dos cards. */
+/* Título dos cards. */
 .card h3 {
   color: var(--azul);
   font-family: "Playfair Display", Georgia, serif;
@@ -429,7 +429,7 @@ section.ativa {
   line-height: 1.65;
 }
 
-/* Cabecalho das paginas internas. */
+/* Cabeçalho das páginas internas. */
 .pagina-header {
   background:
     linear-gradient(rgba(15, 34, 55, 0.88), rgba(15, 34, 55, 0.88)),
@@ -439,7 +439,7 @@ section.ativa {
   text-align: center;
 }
 
-/* Titulo das paginas internas. */
+/* Título das páginas internas. */
 .pagina-header h1 {
   color: var(--branco);
   font-family: "Playfair Display", Georgia, serif;
@@ -447,7 +447,7 @@ section.ativa {
   margin-bottom: 0.5rem;
 }
 
-/* Subtitulo das paginas internas. */
+/* Subtítulo das páginas internas. */
 .pagina-header p {
   color: var(--dourado-claro);
   font-size: 0.82rem;
@@ -456,7 +456,7 @@ section.ativa {
   text-transform: uppercase;
 }
 
-/* Container central das paginas internas. */
+/* Container central das páginas internas. */
 .pagina-conteudo {
   margin: 0 auto;
   max-width: 960px;
@@ -489,7 +489,7 @@ section.ativa {
   line-height: 1.75;
 }
 
-/* Espacamento entre paragrafos dentro de blocos. */
+/* Espaçamento entre parágrafos dentro de blocos. */
 .bloco p + p {
   margin-top: 0.7rem;
 }
@@ -510,7 +510,7 @@ section.ativa {
   border-bottom: 0;
 }
 
-/* Data de publicacao das noticias. */
+/* Data de publicação das notícias. */
 .data-publicacao {
   color: #8b949e;
   font-size: 0.78rem;
@@ -564,7 +564,7 @@ section.ativa {
   margin-bottom: 0.3rem;
 }
 
-/* Descricao do evento. */
+/* Descrição do evento. */
 .agenda-info p {
   color: #68737d;
   font-size: 0.94rem;
@@ -583,7 +583,7 @@ section.ativa {
   padding: 1.4rem;
 }
 
-/* Icone circular dos grupos. */
+/* Ícone circular dos grupos. */
 .grupo-icone,
 .contato-card .icone {
   align-items: center;
@@ -613,7 +613,7 @@ section.ativa {
   line-height: 1.65;
 }
 
-/* Etiqueta com horario do grupo. */
+/* Etiqueta com horário do grupo. */
 .badge {
   background: var(--azul);
   border-radius: 999px;
@@ -665,7 +665,7 @@ section.ativa {
   text-decoration: none;
 }
 
-/* Caixa de doacao via Pix. */
+/* Caixa de doação via Pix. */
 .pix-box {
   background: var(--azul);
   border: 2px solid var(--dourado);
@@ -702,7 +702,7 @@ section.ativa {
   padding: 0.9rem 1rem;
 }
 
-/* Rodape de cada secao. */
+/* Rodapé de cada seção. */
 footer {
   background: var(--azul-escuro);
   border-top: 3px solid var(--dourado);
@@ -739,7 +739,7 @@ footer {
   margin-bottom: 1.2rem;
 }
 
-/* Botoes do rodape. */
+/* Botões do rodapé. */
 .footer-links button {
   background: transparent;
   border: 0;

@@ -2,14 +2,14 @@
 <!-- Define que este documento usa HTML5. -->
 <html lang="pt-BR">
 <head>
-  <!-- Configura acentos e caracteres especiais em portugues. -->
+  <!-- Configura acentos e caracteres especiais em português. -->
   <meta charset="UTF-8">
 
   <!-- Faz o layout se ajustar corretamente em celulares, tablets e desktops. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Titulo exibido na aba do navegador. -->
-  <title>Area Pastoral Sao Joao Batista - Distrito Nova Vida / Sococo - Moju/PA</title>
+  <!-- Título exibido na aba do navegador. -->
+  <title>Área Pastoral São João Batista - Distrito Nova Vida / Sococo - Mojú/PA</title>
 
   <!-- Carrega as fontes usadas no site. -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,31 +18,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Barra de navegacao fixa no topo do site. -->
+  <!-- Barra de navegação fixa no topo do site. -->
   <nav class="navbar">
-    <!-- Logo clicavel: volta para a pagina inicial. -->
-    <a class="nav-logo" href="#" onclick="mostrar('inicio')" aria-label="Ir para o inicio">
-      <!-- Imagem usada como logotipo da area pastoral. -->
-      <img src="imagens/logo.jpg" alt="Logo da Area Pastoral Sao Joao Batista">
+    <!-- Logo clicável: volta para a página inicial. -->
+    <a class="nav-logo" href="#" onclick="mostrar('inicio')" aria-label="Ir para o início">
+      <!-- Imagem usada como logotipo da área pastoral. -->
+      <img src="imagens/logo.jpg" alt="Logo da Área Pastoral São João Batista">
 
-      <!-- Nome e subtitulo exibidos ao lado do logotipo. -->
+      <!-- Nome e subtítulo exibidos ao lado do logotipo. -->
       <span>
-        Area Pastoral Sao Joao Batista
-        <small>Moju - Para</small>
+        Área Pastoral São João Batista
+        <small>Mojú - Pará</small>
       </span>
     </a>
 
     <!-- Menu principal para telas maiores. -->
     <ul class="nav-links">
-      <li><a href="#" onclick="mostrar('inicio')">Inicio</a></li>
+      <li><a href="#" onclick="mostrar('inicio')">Início</a></li>
       <li><a href="#" onclick="mostrar('sobre')">Sobre</a></li>
       <li><a href="#" onclick="mostrar('agenda')">Agenda</a></li>
       <li><a href="#" onclick="mostrar('grupos')">Grupos</a></li>
-      <li><a href="#" onclick="mostrar('noticias')">Noticias</a></li>
+      <li><a href="#" onclick="mostrar('noticias')">Notícias</a></li>
       <li><a href="#" onclick="mostrar('contato')">Contato</a></li>
     </ul>
 
-    <!-- Botao hamburguer usado para abrir o menu no celular. -->
+    <!-- Botão hamburguer usado para abrir o menu no celular. -->
     <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir menu">
       <span></span>
       <span></span>
@@ -52,46 +52,46 @@
 
   <!-- Menu exibido apenas em telas menores. -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#" onclick="mostrar('inicio');fecharMenu()">Inicio</a>
+    <a href="#" onclick="mostrar('inicio');fecharMenu()">Início</a>
     <a href="#" onclick="mostrar('sobre');fecharMenu()">Sobre</a>
     <a href="#" onclick="mostrar('agenda');fecharMenu()">Agenda</a>
     <a href="#" onclick="mostrar('grupos');fecharMenu()">Grupos</a>
-    <a href="#" onclick="mostrar('noticias');fecharMenu()">Noticias</a>
+    <a href="#" onclick="mostrar('noticias');fecharMenu()">Notícias</a>
     <a href="#" onclick="mostrar('contato');fecharMenu()">Contato</a>
   </div>
 
-  <!-- Secao inicial: aparece primeiro porque possui a classe ativa. -->
+  <!-- Seção inicial: aparece primeiro porque possui a classe ativa. -->
   <section id="inicio" class="ativa">
-    <!-- Hero: primeira dobra da pagina com a logo como fundo. -->
+    <!-- Hero: primeira dobra da página com a logo como fundo. -->
     <div class="hero">
-      <!-- Logo central para reforcar a identidade visual. -->
-      <img class="hero-logo" src="imagens/logo.jpg" alt="Logo da Area Pastoral Sao Joao Batista">
+      <!-- Logo central para reforçar a identidade visual. -->
+      <img class="hero-logo" src="imagens/logo.jpg" alt="Logo da Área Pastoral São João Batista">
 
-      <!-- Texto principal da pagina inicial. -->
-      <h1>Area Pastoral<br>Sao Joao Batista</h1>
-      <p class="subtitulo-hero">Distrito Nova Vida / Sococo - Moju/PA</p>
-      <p>Bem-vindo a nossa comunidade. Um lugar de fe, acolhimento e esperanca para todas as familias.</p>
+      <!-- Texto principal da página inicial. -->
+      <h1>Área Pastoral<br>São João Batista</h1>
+      <p class="subtitulo-hero">Distrito Nova Vida / Sococo - Mojú/PA</p>
+      <p>Bem-vindo à nossa comunidade. Um lugar de fé, acolhimento e esperança para todas as famílias.</p>
 
-      <!-- Chamadas para as areas mais importantes do site. -->
+      <!-- Chamadas para as áreas mais importantes do site. -->
       <div class="hero-btns">
-        <button class="btn-dourado" onclick="mostrar('agenda')">Ver horarios de missas</button>
+        <button class="btn-dourado" onclick="mostrar('agenda')">Ver horários de missas</button>
         <button class="btn-outline" onclick="mostrar('contato')">Entre em contato</button>
       </div>
     </div>
 
-    <!-- Faixa com horarios resumidos das missas. -->
+    <!-- Faixa com horários resumidos das missas. -->
     <div class="missas-strip">
-      <h2>Horarios de Missas</h2>
+      <h2>Horários de Missas</h2>
       <div class="linha-dourada"></div>
 
-      <!-- Grid responsivo dos horarios. -->
+      <!-- Grid responsivo dos horários. -->
       <div class="missas-grid">
         <div class="missa-card">
           <div class="dia">Seg - Sex</div>
           <div class="hora">7h00</div>
         </div>
         <div class="missa-card">
-          <div class="dia">Sabado</div>
+          <div class="dia">Sábado</div>
           <div class="hora">18h00</div>
         </div>
         <div class="missa-card">
@@ -99,13 +99,13 @@
           <div class="hora">7h00 / 9h30</div>
         </div>
         <div class="missa-card">
-          <div class="dia">1o Sabado</div>
+          <div class="dia">1º Sábado</div>
           <div class="hora">Solene 18h</div>
         </div>
       </div>
     </div>
 
-    <!-- Cards de acesso rapido para as principais paginas. -->
+    <!-- Cards de acesso rápido para as principais páginas. -->
     <div class="destaques">
       <h2 class="secao-titulo">Nossa Comunidade</h2>
       <div class="linha-dourada"></div>
@@ -113,151 +113,151 @@
       <div class="cards-grid">
         <button class="card" onclick="mostrar('sobre')">
           <div class="card-icone">+</div>
-          <h3>Sobre a Area Pastoral</h3>
-          <p>Conheca a historia, a missao e a caminhada da nossa comunidade no Distrito Nova Vida.</p>
+          <h3>Sobre a Área Pastoral</h3>
+          <p>Conheça a história, a missão e a caminhada da nossa comunidade no Distrito Nova Vida.</p>
         </button>
 
         <button class="card" onclick="mostrar('agenda')">
           <div class="card-icone">24</div>
           <h3>Agenda e Missas</h3>
-          <p>Confira horarios de missas, eventos, novenas e celebracoes especiais.</p>
+          <p>Confira horários de missas, eventos, novenas e celebrações especiais.</p>
         </button>
 
         <button class="card" onclick="mostrar('grupos')">
           <div class="card-icone">GP</div>
-          <h3>Grupos e Ministerios</h3>
-          <p>Catequese, coral, grupo de jovens, terco das mulheres e outras pastorais.</p>
+          <h3>Grupos e Ministérios</h3>
+          <p>Catequese, coral, grupo de jovens, terço das mulheres e outras pastorais.</p>
         </button>
 
         <button class="card" onclick="mostrar('contato')">
           <div class="card-icone">PIX</div>
           <h3>Contribua</h3>
-          <p>Sua doacao ajuda a manter a area pastoral e os projetos da comunidade.</p>
+          <p>Sua doação ajuda a manter a área pastoral e os projetos da comunidade.</p>
         </button>
       </div>
     </div>
 
-    <!-- Rodape da secao inicial. -->
+    <!-- Rodapé da seção inicial. -->
     <footer>
-      <div class="footer-logo">Area Pastoral Sao Joao Batista</div>
-      <div class="footer-sub">Distrito Nova Vida / Sococo - Moju/PA</div>
+      <div class="footer-logo">Área Pastoral São João Batista</div>
+      <div class="footer-sub">Distrito Nova Vida / Sococo - Mojú/PA</div>
       <div class="footer-links">
-        <button onclick="mostrar('inicio')">Inicio</button>
+        <button onclick="mostrar('inicio')">Início</button>
         <button onclick="mostrar('sobre')">Sobre</button>
         <button onclick="mostrar('agenda')">Agenda</button>
         <button onclick="mostrar('grupos')">Grupos</button>
-        <button onclick="mostrar('noticias')">Noticias</button>
+        <button onclick="mostrar('noticias')">Notícias</button>
         <button onclick="mostrar('contato')">Contato</button>
       </div>
-      <p>Avenida João Carlos Batista, s/n - Distrito Nova Vida - Moju/PA - (91) 9 9999-9999</p>
+      <p>Avenida João Carlos Batista, s/n - Distrito Nova Vida - Mojú/PA - (91) 9 9999-9999</p>
     </footer>
   </section>
 
-  <!-- Pagina sobre a comunidade. -->
+  <!-- Página sobre a comunidade. -->
   <section id="sobre">
     <div class="pagina-header">
-      <h1>Sobre a Area Pastoral</h1>
-      <p>Nossa pastoral, missao e historia</p>
+      <h1>Sobre a Área Pastoral</h1>
+      <p>Nossa pastoral, missão e história</p>
     </div>
 
     <div class="pagina-conteudo">
       <div class="bloco">
-        <h3>Nossa Historia</h3>
-        <p>A Area Pastoral Sao Joao Batista esta situada no Distrito Nova Vida / Sococo, em Moju/PA, e e vinculada a Paroquia Divino Espirito Santo de Moju.</p>
-        <p>Nasceu do sonho e da fe de uma comunidade que cresceu e hoje acolhe familias da regiao com evangelizacao, servico e comunhao.</p>
+        <h3>Nossa História</h3>
+        <p>A Área Pastoral São João Batista está situada no Distrito Nova Vida / Sococo, em Mojú/PA, e é vinculada à Paróquia Divino Espírito Santo de Mojú.</p>
+        <p>Nasceu do sonho e da fé de uma comunidade que cresceu e hoje acolhe famílias da região com evangelização, serviço e comunhão.</p>
       </div>
 
       <div class="bloco">
-        <h3>Nossa Missao</h3>
-        <p>Anunciar o Evangelho de Jesus Cristo, celebrar os sacramentos com alegria e servir ao proximo com amor, especialmente os mais necessitados.</p>
+        <h3>Nossa Missão</h3>
+        <p>Anunciar o Evangelho de Jesus Cristo, celebrar os sacramentos com alegria e servir ao próximo com amor, especialmente os mais necessitados.</p>
       </div>
 
       <div class="bloco">
-        <h3>Nosso Paroco</h3>
-        <p><strong>Padre Leonardo Correa</strong> acompanha a comunidade promovendo evangelizacao, caridade e formacao crista.</p>
+        <h3>Nosso Pároco</h3>
+        <p><strong>Padre Leonardo Corrêa</strong> acompanha a comunidade promovendo evangelização, caridade e formação cristã.</p>
       </div>
 
       <div class="bloco">
-        <h3>Localizacao e Contato</h3>
+        <h3>Localização e Contato</h3>
         <ul>
-          <li>Avenida João Carlos Batista, s/n - Distrito Nova Vida, Moju/PA</li>
+          <li>Avenida João Carlos Batista, s/n - Distrito Nova Vida, Mojú/PA</li>
           <li>CEP: 68450-000</li>
           <li>Telefone / WhatsApp: (91) 9 9999-9999</li>
           <li>E-mail: areapastoral.sjoaobatista.dnv@gmail.com</li>
-          <li>Secretaria: segunda a sexta, 8h as 11h e 14h as 17h</li>
+          <li>Secretaria: segunda a sexta, 8h às 11h e 14h às 17h</li>
         </ul>
       </div>
     </div>
 
     <footer>
-      <div class="footer-logo">Area Pastoral Sao Joao Batista</div>
-      <div class="footer-sub">Distrito Nova Vida / Sococo - Moju/PA</div>
+      <div class="footer-logo">Área Pastoral São João Batista</div>
+      <div class="footer-sub">Distrito Nova Vida / Sococo - Mojú/PA</div>
     </footer>
   </section>
 
-  <!-- Pagina de agenda e celebracoes. -->
+  <!-- Página de agenda e celebrações. -->
   <section id="agenda">
     <div class="pagina-header">
       <h1>Agenda e Missas</h1>
-      <p>Horarios e celebracoes da nossa comunidade</p>
+      <p>Horários e celebrações da nossa comunidade</p>
     </div>
 
     <div class="pagina-conteudo">
       <div class="bloco">
-        <h3>Horarios Fixos de Missas</h3>
+        <h3>Horários Fixos de Missas</h3>
         <ul>
           <li>Segunda a sexta - 7h00</li>
-          <li>Sabado - 18h00</li>
+          <li>Sábado - 18h00</li>
           <li>Domingo - 7h00 e 9h30</li>
-          <li>Primeiro sabado do mes - 18h00</li>
+          <li>Primeiro sábado do mês - 18h00</li>
         </ul>
       </div>
 
-      <!-- Cada item de agenda tem uma data e uma descricao. -->
+      <!-- Cada item de agenda tem uma data e uma descrição. -->
       <div class="agenda-item">
         <div class="agenda-data"><div class="mes">Jun</div><div class="dia">24</div></div>
         <div class="agenda-info">
-          <h4>Festa de Sao Joao Batista</h4>
-          <p>Missa Solene as 9h30 seguida de almoco festivo e programacao cultural.</p>
+          <h4>Festa de São João Batista</h4>
+          <p>Missa Solene às 9h30 seguida de almoço festivo e programação cultural.</p>
         </div>
       </div>
 
       <div class="agenda-item">
         <div class="agenda-data"><div class="mes">Mai</div><div class="dia">31</div></div>
         <div class="agenda-info">
-          <h4>Encerramento do Mes de Maria</h4>
-          <p>Procissao com a imagem de Nossa Senhora as 18h00, saindo da igreja.</p>
+          <h4>Encerramento do Mês de Maria</h4>
+          <p>Procissão com a imagem de Nossa Senhora às 18h00, saindo da igreja.</p>
         </div>
       </div>
 
       <div class="agenda-item">
         <div class="agenda-data"><div class="mes">Jul</div><div class="dia">05</div></div>
         <div class="agenda-info">
-          <h4>Inscricoes para a Catequese</h4>
-          <p>Inscricoes na secretaria paroquial para criancas de 7 anos ou mais.</p>
+          <h4>Inscrições para a Catequese</h4>
+          <p>Inscrições na secretaria paroquial para crianças de 7 anos ou mais.</p>
         </div>
       </div>
 
       <div class="bloco">
-        <h3>Confissoes</h3>
+        <h3>Confissões</h3>
         <ul>
-          <li>Sabados: 17h00 as 17h45</li>
-          <li>Outros horarios: mediante agendamento</li>
+          <li>Sábados: 17h00 às 17h45</li>
+          <li>Outros horários: mediante agendamento</li>
         </ul>
       </div>
     </div>
 
     <footer>
-      <div class="footer-logo">Area Pastoral Sao Joao Batista</div>
-      <div class="footer-sub">Distrito Nova Vida / Sococo - Moju/PA</div>
+      <div class="footer-logo">Área Pastoral São João Batista</div>
+      <div class="footer-sub">Distrito Nova Vida / Sococo - Mojú/PA</div>
     </footer>
   </section>
 
-  <!-- Pagina dos grupos e ministerios. -->
+  <!-- Página dos grupos e ministérios. -->
   <section id="grupos">
     <div class="pagina-header">
-      <h1>Grupos e Ministerios</h1>
-      <p>Faca parte da nossa comunidade viva</p>
+      <h1>Grupos e Ministérios</h1>
+      <p>Faça parte da nossa comunidade viva</p>
     </div>
 
     <div class="pagina-conteudo">
@@ -265,8 +265,8 @@
         <div class="grupo-icone">CT</div>
         <div class="grupo-info">
           <h3>Catequese</h3>
-          <p>Preparacao para Primeira Comunhao e Crisma. As aulas acontecem aos sabados, das 8h as 9h30.</p>
-          <span class="badge">Sabados - 8h as 9h30</span>
+          <p>Preparação para Primeira Comunhão e Crisma. As aulas acontecem aos sábados, das 8h às 9h30.</p>
+          <span class="badge">Sábados - 8h às 9h30</span>
         </div>
       </div>
 
@@ -274,7 +274,7 @@
         <div class="grupo-icone">CR</div>
         <div class="grupo-info">
           <h3>Coral Paroquial</h3>
-          <p>Grupo responsavel por animar missas e celebracoes com musica liturgica.</p>
+          <p>Grupo responsável por animar missas e celebrações com música litúrgica.</p>
           <span class="badge">Sextas - 19h30</span>
         </div>
       </div>
@@ -283,22 +283,22 @@
         <div class="grupo-icone">J</div>
         <div class="grupo-info">
           <h3>Grupo de Jovens</h3>
-          <p>Espaco de formacao, oracao e missao para adolescentes e jovens adultos.</p>
-          <span class="badge">Sabados - 16h00</span>
+          <p>Espaço de formação, oração e missão para adolescentes e jovens adultos.</p>
+          <span class="badge">Sábados - 16h00</span>
         </div>
       </div>
     </div>
 
     <footer>
-      <div class="footer-logo">Area Pastoral Sao Joao Batista</div>
-      <div class="footer-sub">Distrito Nova Vida / Sococo - Moju/PA</div>
+      <div class="footer-logo">Área Pastoral São João Batista</div>
+      <div class="footer-sub">Distrito Nova Vida / Sococo - Mojú/PA</div>
     </footer>
   </section>
 
-  <!-- Pagina de noticias e avisos. -->
+  <!-- Página de notícias e avisos. -->
   <section id="noticias">
     <div class="pagina-header">
-      <h1>Noticias e Avisos</h1>
+      <h1>Notícias e Avisos</h1>
       <p>Fique por dentro da vida da comunidade</p>
     </div>
 
@@ -306,36 +306,36 @@
       <div class="bloco">
         <h3>Bem-vindos ao nosso site!</h3>
         <p class="data-publicacao">Publicado em maio de 2026</p>
-        <p>Aqui voce encontrara horarios de missas, agenda de eventos, informacoes sobre os grupos e muito mais.</p>
+        <p>Aqui você encontrará horários de missas, agenda de eventos, informações sobre os grupos e muito mais.</p>
       </div>
 
       <div class="bloco">
-        <h3>Inscricoes abertas - Catequese 2026</h3>
+        <h3>Inscrições abertas - Catequese 2026</h3>
         <p class="data-publicacao">Publicado em maio de 2026</p>
         <p>Procure a secretaria paroquial ou ligue para (91) 9 9999-9999.</p>
       </div>
     </div>
 
     <footer>
-      <div class="footer-logo">Area Pastoral Sao Joao Batista</div>
-      <div class="footer-sub">Distrito Nova Vida / Sococo - Moju/PA</div>
+      <div class="footer-logo">Área Pastoral São João Batista</div>
+      <div class="footer-sub">Distrito Nova Vida / Sococo - Mojú/PA</div>
     </footer>
   </section>
 
-  <!-- Pagina de contato, endereco, redes sociais e doacoes. -->
+  <!-- Página de contato, endereço, redes sociais e doações. -->
   <section id="contato">
     <div class="pagina-header">
-      <h1>Contato e Doacoes</h1>
-      <p>Estamos aqui para acolher voce</p>
+      <h1>Contato e Doações</h1>
+      <p>Estamos aqui para acolher você</p>
     </div>
 
     <div class="pagina-conteudo">
-      <!-- Cards com informacoes de contato. -->
+      <!-- Cards com informações de contato. -->
       <div class="contato-grid">
         <div class="contato-card">
           <div class="icone">END</div>
-          <h3>Endereco</h3>
-          <p>Rua João Carlos Batista, s/n<br>Distrito Nova Vida<br>Moju - PA</p>
+          <h3>Endereço</h3>
+          <p>Rua João Carlos Batista, s/n<br>Distrito Nova Vida<br>Mojú - PA</p>
         </div>
 
         <div class="contato-card">
@@ -353,7 +353,7 @@
         <div class="contato-card">
           <div class="icone">H</div>
           <h3>Secretaria</h3>
-          <p>Segunda a sexta<br>8h as 11h<br>14h as 17h</p>
+          <p>Segunda a sexta<br>8h às 11h<br>14h às 17h</p>
         </div>
       </div>
 
@@ -363,23 +363,23 @@
         <ul>
           <li>Instagram: @areapastoralsaojoaobatista_dnv</li>
           <li>Facebook: /areapastoralsaojoaobatista</li>
-          <li>YouTube: Area Pastoral Sao Joao Batista DNV</li>
+          <li>YouTube: Área Pastoral São João Batista DNV</li>
         </ul>
       </div>
 
-      <!-- Area destacada para doacoes via Pix. -->
+      <!-- Área destacada para doações via Pix. -->
       <div class="pix-box">
-        <h3>Contribua com a Area Pastoral</h3>
-        <p>Sua doacao mantem a comunidade, os projetos sociais e a missao evangelizadora.</p>
+        <h3>Contribua com a Área Pastoral</h3>
+        <p>Sua doação mantém a comunidade, os projetos sociais e a missão evangelizadora.</p>
         <div class="pix-chave">[SUA CHAVE PIX AQUI]</div>
-        <p>Favorecido: <strong>Area Pastoral Sao Joao Batista</strong></p>
+        <p>Favorecido: <strong>Área Pastoral São João Batista</strong></p>
       </div>
     </div>
 
     <footer>
-      <div class="footer-logo">Area Pastoral Sao Joao Batista</div>
-      <div class="footer-sub">Distrito Nova Vida / Sococo - Moju/PA</div>
-      <p>(c) 2025 Area Pastoral Sao Joao Batista - Moju/PA. Todos os direitos reservados.</p>
+      <div class="footer-logo">Área Pastoral São João Batista</div>
+      <div class="footer-sub">Distrito Nova Vida / Sococo - Mojú/PA</div>
+      <p>(c) 2025 Área Pastoral São João Batista - Mojú/PA. Todos os direitos reservados.</p>
     </footer>
   </section>
 
