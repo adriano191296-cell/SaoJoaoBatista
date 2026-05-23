@@ -1,0 +1,838 @@
+/* Variaveis globais para manter cores, sombras e medidas em um so lugar. */
+:root {
+  --azul: #163452;
+  --azul-escuro: #0f2237;
+  --azul-claro: #2d5c88;
+  --dourado: #c8a44a;
+  --dourado-claro: #ead077;
+  --creme: #faf6ef;
+  --branco: #ffffff;
+  --cinza: #4f5963;
+  --cinza-claro: #f0ebe1;
+  --sombra: 0 10px 30px rgba(15, 34, 55, 0.12);
+  --nav-altura: 72px;
+}
+
+/* Remove margens padrao e facilita o calculo de largura dos elementos. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Deixa a rolagem suave quando a pagina volta para o topo. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilo base do site inteiro. */
+body {
+  background: var(--creme);
+  color: var(--cinza);
+  font-family: "Lato", Arial, sans-serif;
+  min-width: 320px;
+}
+
+/* Imagens nunca passam da largura disponivel. */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Botoes herdam a fonte do site. */
+button {
+  font: inherit;
+}
+
+/* Barra fixa no topo com logo e menu. */
+.navbar {
+  align-items: center;
+  background: var(--azul);
+  border-bottom: 3px solid var(--dourado);
+  display: flex;
+  height: var(--nav-altura);
+  justify-content: space-between;
+  left: 0;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Link da marca no menu. */
+.nav-logo {
+  align-items: center;
+  color: var(--branco);
+  display: flex;
+  gap: 0.75rem;
+  min-width: 0;
+  text-decoration: none;
+}
+
+/* Logo pequena do topo. */
+.nav-logo img {
+  border: 2px solid var(--dourado);
+  border-radius: 50%;
+  height: 46px;
+  object-fit: cover;
+  width: 46px;
+}
+
+/* Nome da area pastoral ao lado da logo. */
+.nav-logo span {
+  color: var(--branco);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(0.86rem, 2vw, 1.05rem);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+/* Subtitulo menor dentro do logotipo textual. */
+.nav-logo small {
+  color: var(--dourado-claro);
+  display: block;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Lista de links do menu desktop. */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+/* Links individuais do menu. */
+.nav-links a {
+  color: #d7e2ef;
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  height: var(--nav-altura);
+  letter-spacing: 0.08em;
+  line-height: var(--nav-altura);
+  padding: 0 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Estado visual ao passar o mouse nos links. */
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--dourado-claro);
+}
+
+/* Botao hamburguer aparece apenas em telas menores. */
+.hamburger {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.35rem;
+}
+
+/* Barrinhas do icone hamburguer. */
+.hamburger span {
+  background: var(--branco);
+  border-radius: 999px;
+  display: block;
+  height: 2px;
+  width: 26px;
+}
+
+/* Menu mobile fechado por padrao. */
+.mobile-menu {
+  background: var(--azul);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: none;
+  flex-direction: column;
+  left: 0;
+  position: fixed;
+  top: var(--nav-altura);
+  width: 100%;
+  z-index: 999;
+}
+
+/* Classe adicionada pelo JavaScript para abrir o menu mobile. */
+.mobile-menu.aberto {
+  display: flex;
+}
+
+/* Links do menu mobile. */
+.mobile-menu a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Todas as secoes ficam escondidas inicialmente. */
+section {
+  display: none;
+  padding-top: var(--nav-altura);
+}
+
+/* A secao ativa aparece na tela. */
+section.ativa {
+  display: block;
+}
+
+/* Primeira tela com a imagem local como fundo. */
+.hero {
+  align-items: center;
+  background:
+    linear-gradient(rgba(10, 22, 36, 0.78), rgba(10, 22, 36, 0.66)),
+    url("imagens/logo.jpg") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - var(--nav-altura));
+  padding: clamp(2rem, 7vw, 5rem) 1.25rem;
+  position: relative;
+  text-align: center;
+}
+
+/* Camada extra para melhorar a leitura do texto sobre o fundo. */
+.hero::after {
+  background: radial-gradient(circle, rgba(200, 164, 74, 0.2), transparent 54%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* Todo conteudo direto do hero fica acima da camada decorativa. */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo central da pagina inicial. */
+.hero-logo {
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+  height: clamp(110px, 22vw, 180px);
+  margin-bottom: 1.4rem;
+  object-fit: cover;
+  width: clamp(110px, 22vw, 180px);
+}
+
+/* Titulo principal. */
+.hero h1 {
+  color: var(--branco);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.2rem, 7vw, 4.4rem);
+  line-height: 1.05;
+  margin-bottom: 0.65rem;
+  max-width: 900px;
+}
+
+/* Subtitulo do hero. */
+.subtitulo-hero {
+  color: var(--dourado-claro);
+  font-size: clamp(0.78rem, 2vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 1.3rem;
+  text-transform: uppercase;
+}
+
+/* Texto de boas-vindas do hero. */
+.hero p:not(.subtitulo-hero) {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2.4vw, 1.15rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 650px;
+}
+
+/* Linha dos botoes principais. */
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+/* Botao preenchido dourado. */
+.btn-dourado,
+.btn-outline {
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  min-height: 46px;
+  padding: 0.8rem 1.4rem;
+  text-transform: uppercase;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Cor do botao principal. */
+.btn-dourado {
+  background: var(--dourado);
+  border: 1px solid var(--dourado);
+  color: var(--azul-escuro);
+}
+
+/* Cor do botao secundario. */
+.btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--branco);
+}
+
+/* Efeito simples de interacao nos botoes do hero. */
+.btn-dourado:hover,
+.btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+/* Faixa azul com horarios das missas. */
+.missas-strip {
+  background: var(--azul);
+  border-top: 3px solid var(--dourado);
+  padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
+}
+
+/* Titulos das secoes. */
+.missas-strip h2,
+.secao-titulo {
+  color: var(--branco);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  margin-bottom: 0.45rem;
+  text-align: center;
+}
+
+/* Titulo da secao clara usa azul. */
+.secao-titulo {
+  color: var(--azul);
+}
+
+/* Pequena linha dourada abaixo de titulos. */
+.linha-dourada {
+  background: var(--dourado);
+  height: 3px;
+  margin: 0 auto 2rem;
+  width: 56px;
+}
+
+/* Grade responsiva dos horarios. */
+.missas-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+/* Card individual de horario. */
+.missa-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(200, 164, 74, 0.35);
+  border-radius: 8px;
+  min-height: 116px;
+  padding: 1.1rem;
+  text-align: center;
+}
+
+/* Dia da semana no card de horario. */
+.missa-card .dia {
+  color: var(--dourado-claro);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+}
+
+/* Hora da missa no card. */
+.missa-card .hora {
+  color: var(--branco);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+}
+
+/* Area de destaques da pagina inicial. */
+.destaques {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: clamp(3rem, 7vw, 5rem) 1.25rem;
+}
+
+/* Grade de cards da home. */
+.cards-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Card clicavel da home. */
+.card {
+  background: var(--branco);
+  border: 0;
+  border-radius: 8px;
+  border-top: 4px solid var(--dourado);
+  box-shadow: var(--sombra);
+  color: inherit;
+  cursor: pointer;
+  min-height: 230px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Efeito dos cards da home. */
+.card:hover {
+  box-shadow: 0 16px 36px rgba(15, 34, 55, 0.18);
+  transform: translateY(-4px);
+}
+
+/* Icone textual de cada card. */
+.card-icone {
+  align-items: center;
+  background: var(--cinza-claro);
+  border-radius: 50%;
+  color: var(--azul);
+  display: flex;
+  font-weight: 700;
+  height: 48px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 48px;
+}
+
+/* Titulo dos cards. */
+.card h3 {
+  color: var(--azul);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.18rem;
+  margin-bottom: 0.55rem;
+}
+
+/* Texto dos cards. */
+.card p {
+  color: #64707b;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+/* Cabecalho das paginas internas. */
+.pagina-header {
+  background:
+    linear-gradient(rgba(15, 34, 55, 0.88), rgba(15, 34, 55, 0.88)),
+    url("imagens/logo.jpg") center / cover no-repeat;
+  border-bottom: 3px solid var(--dourado);
+  padding: clamp(4rem, 9vw, 6rem) 1.25rem clamp(2.5rem, 6vw, 3.5rem);
+  text-align: center;
+}
+
+/* Titulo das paginas internas. */
+.pagina-header h1 {
+  color: var(--branco);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitulo das paginas internas. */
+.pagina-header p {
+  color: var(--dourado-claro);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Container central das paginas internas. */
+.pagina-conteudo {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
+}
+
+/* Bloco branco usado para textos e listas. */
+.bloco {
+  background: var(--branco);
+  border-left: 4px solid var(--dourado);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  margin-bottom: 1.25rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+/* Titulo dos blocos. */
+.bloco h3 {
+  color: var(--azul);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.32rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Textos e itens dos blocos. */
+.bloco p,
+.bloco li {
+  color: #5d6670;
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+/* Espacamento entre paragrafos dentro de blocos. */
+.bloco p + p {
+  margin-top: 0.7rem;
+}
+
+/* Remove marcadores padrao das listas. */
+.bloco ul {
+  list-style: none;
+}
+
+/* Linha individual das listas. */
+.bloco li {
+  border-bottom: 1px solid var(--cinza-claro);
+  padding: 0.45rem 0;
+}
+
+/* Remove borda da ultima linha da lista. */
+.bloco li:last-child {
+  border-bottom: 0;
+}
+
+/* Data de publicacao das noticias. */
+.data-publicacao {
+  color: #8b949e;
+  font-size: 0.78rem;
+  margin-bottom: 0.45rem;
+}
+
+/* Item individual da agenda. */
+.agenda-item {
+  align-items: flex-start;
+  background: var(--branco);
+  border-left: 4px solid var(--azul-claro);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+}
+
+/* Caixa da data do evento. */
+.agenda-data {
+  background: var(--azul);
+  border-radius: 8px;
+  color: var(--branco);
+  flex: 0 0 68px;
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+}
+
+/* Mes no card da agenda. */
+.agenda-data .mes {
+  color: var(--dourado-claro);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Dia no card da agenda. */
+.agenda-data .dia {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+/* Titulo do evento. */
+.agenda-info h4 {
+  color: var(--azul);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.18rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Descricao do evento. */
+.agenda-info p {
+  color: #68737d;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+/* Card de grupo ou ministerio. */
+.grupo-card {
+  align-items: flex-start;
+  background: var(--branco);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.1rem;
+  padding: 1.4rem;
+}
+
+/* Icone circular dos grupos. */
+.grupo-icone,
+.contato-card .icone {
+  align-items: center;
+  background: var(--cinza-claro);
+  border-radius: 50%;
+  color: var(--azul);
+  display: flex;
+  flex: 0 0 54px;
+  font-weight: 700;
+  height: 54px;
+  justify-content: center;
+  width: 54px;
+}
+
+/* Titulo do grupo. */
+.grupo-info h3 {
+  color: var(--azul);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.22rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Texto do grupo. */
+.grupo-info p {
+  color: #65707a;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+/* Etiqueta com horario do grupo. */
+.badge {
+  background: var(--azul);
+  border-radius: 999px;
+  color: var(--dourado-claro);
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-top: 0.7rem;
+  padding: 0.35rem 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Grade dos cards de contato. */
+.contato-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 1.25rem;
+}
+
+/* Card de contato individual. */
+.contato-card {
+  background: var(--branco);
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  display: grid;
+  gap: 0.8rem;
+  justify-items: center;
+  min-height: 210px;
+  overflow-wrap: anywhere;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* Titulo do card de contato. */
+.contato-card h3 {
+  color: var(--azul);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.2rem;
+}
+
+/* Texto e links do contato. */
+.contato-card p,
+.contato-card a {
+  color: #65707a;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+/* Caixa de doacao via Pix. */
+.pix-box {
+  background: var(--azul);
+  border: 2px solid var(--dourado);
+  border-radius: 8px;
+  margin-top: 1.25rem;
+  padding: clamp(1.5rem, 5vw, 2.2rem);
+  text-align: center;
+}
+
+/* Titulo da caixa Pix. */
+.pix-box h3 {
+  color: var(--dourado-claro);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.45rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Texto da caixa Pix. */
+.pix-box p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+/* Chave Pix em destaque. */
+.pix-chave {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(234, 208, 119, 0.8);
+  border-radius: 8px;
+  color: var(--branco);
+  font-family: Consolas, Monaco, monospace;
+  margin: 1rem auto;
+  max-width: 440px;
+  overflow-wrap: anywhere;
+  padding: 0.9rem 1rem;
+}
+
+/* Rodape de cada secao. */
+footer {
+  background: var(--azul-escuro);
+  border-top: 3px solid var(--dourado);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.86rem;
+  padding: 2.5rem 1.25rem 1.5rem;
+  text-align: center;
+}
+
+/* Nome no rodape. */
+.footer-logo {
+  color: var(--branco);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Subtitulo no rodape. */
+.footer-sub {
+  color: var(--dourado-claro);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Links do rodape. */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+/* Botoes do rodape. */
+.footer-links button {
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+/* Estado hover dos botoes do rodape. */
+.footer-links button:hover {
+  color: var(--dourado-claro);
+}
+
+/* Ajustes para tablets. */
+@media (max-width: 980px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .missas-grid,
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Ajustes para celulares. */
+@media (max-width: 640px) {
+  :root {
+    --nav-altura: 68px;
+  }
+
+  .navbar {
+    padding: 0 0.85rem;
+  }
+
+  .nav-logo {
+    gap: 0.55rem;
+  }
+
+  .nav-logo img {
+    height: 42px;
+    width: 42px;
+  }
+
+  .nav-logo span {
+    font-size: 0.78rem;
+  }
+
+  .hero {
+    min-height: calc(100vh - var(--nav-altura));
+  }
+
+  .hero-btns,
+  .btn-dourado,
+  .btn-outline {
+    width: 100%;
+  }
+
+  .missas-grid,
+  .cards-grid,
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .agenda-item,
+  .grupo-card {
+    flex-direction: column;
+  }
+
+  .agenda-data {
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Ajustes finos para telas muito pequenas. */
+@media (max-width: 380px) {
+  .nav-logo small {
+    display: none;
+  }
+
+  .subtitulo-hero {
+    letter-spacing: 0.08em;
+  }
+}
