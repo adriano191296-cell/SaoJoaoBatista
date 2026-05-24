@@ -436,7 +436,33 @@ section.ativa {
     url("imagens/logo.jpg") center / cover no-repeat;
   border-bottom: 3px solid var(--dourado);
   padding: clamp(4rem, 9vw, 6rem) 1.25rem clamp(2.5rem, 6vw, 3.5rem);
+  position: relative;
   text-align: center;
+}
+
+/* Botao para voltar a secao visitada anteriormente. */
+.btn-voltar {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(234, 208, 119, 0.82);
+  border-radius: 6px;
+  color: var(--branco);
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 700;
+  left: clamp(1rem, 4vw, 2rem);
+  letter-spacing: 0.08em;
+  min-height: 40px;
+  padding: 0.65rem 1rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 1.25rem;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-voltar:hover {
+  background: var(--dourado);
+  color: var(--azul-escuro);
+  transform: translateY(-2px);
 }
 
 /* Título das páginas internas. */
@@ -823,6 +849,16 @@ footer {
     gap: 0.5rem;
     justify-content: center;
     width: 100%;
+  }
+
+  .btn-voltar {
+    left: 50%;
+    top: 1rem;
+    transform: translateX(-50%);
+  }
+
+  .btn-voltar:hover {
+    transform: translateX(-50%) translateY(-2px);
   }
 }
 
